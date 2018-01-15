@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    function getAlResult(){
+        document.write("序号：员工编号:姓名");
+        document.write("<br/>");
+        var keyReslut =new Array();
+        var result =new Array();
+        for(var i=0;i<window.localStorage.length;i++){
+            keyReslut[i]=window.localStorage.key(i);
+            result[i] = window.localStorage.getItem( keyReslut[i]);
+            document.write(i+1+":  ");
+            document.writeln( keyReslut[i]+" "+result[i]);
+            document.write("<br/>");
+        }
+    }
+
+    function deleteResult(){
+        localStorage.clear()
+        alert("delete完毕！")
+    }
+</script>
+<body>
+
+<input type="button" onclick="getAlResult()" value="查看抽奖结果"/><br/><br/>
+<input type="button" onclick="deleteResult()" value="清除抽奖历史，谨慎使用！"/>
+
+
+</body>
+</html>
